@@ -14,6 +14,7 @@ public class ControladorRutas {
     public ControladorRutas(moduloRutas r) {
         this.r = r;
         data = new dataRuta();
+        System.out.println(IdActual());
     }
 
     public void initDiseño() {
@@ -29,6 +30,7 @@ public class ControladorRutas {
         r.txtCosto.setText("");
         r.tablaCodigo.clearSelection();
         filaSeleccionada = -1;
+        r.txtCodigo.setText(IdActual());
     }
 
     public void registrar() {
@@ -115,8 +117,8 @@ public class ControladorRutas {
 
     private String IdActual() {
         try {
-            int posicionUltimo = new dataRuta().getConsultar(0).size() - 1;
-            int ultimoValor = Integer.parseInt(new dataRuta().getConsultar(0).get(posicionUltimo).toString());
+            int posicionUltimo = data.getConsultarr(0).size() - 1;
+            int ultimoValor = Integer.parseInt(data.getConsultarr(0).get(posicionUltimo).toString());
             int valorActualId = ultimoValor + 1;
             String nuevaID = String.format("%08d", valorActualId);
             return nuevaID;

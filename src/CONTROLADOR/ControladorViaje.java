@@ -80,7 +80,7 @@ public class ControladorViaje {
             int msj = JOptionPane.YES_NO_OPTION;
             int confi = JOptionPane.showConfirmDialog(null, "Confirmar Modificacion", "Confirmacion", msj);
             if (confi == 0) {
-                String diViaje =  UIController.datoFilaColumna(v.tablaViaje, filaSeleccionada, "idViaje").toString();
+                String diViaje = UIController.datoFilaColumna(v.tablaViaje, filaSeleccionada, "idViaje").toString();
                 String placaAuto = v.comboPlacaAuto.getSelectedItem().toString();
                 String dniPasajero = v.comboPasajero.getSelectedItem().toString();
                 String partida = v.comboPartida.getSelectedItem().toString();

@@ -86,6 +86,30 @@ public class dataRuta {
         return new ArrayList<>(resultSet); // Convertimos el Set en ArrayList para mantener el tipo de retorno
     }
 
+    public ArrayList<Object> getConsultarr(int columna) {
+        ArrayList<Object> resultado = new ArrayList<>();
+        for (Ruta ruta : hashRutas.values()) {
+            switch (columna) {
+                case 0: // Suponiendo que 0 es para el código de la ruta
+                    resultado.add(ruta.getCodigoRuta());
+                    break;
+                case 1: // Suponiendo que 1 es para la partida
+                    resultado.add(ruta.getPartida());
+                    break;
+                case 2: // Suponiendo que 2 es para el destino
+                    resultado.add(ruta.getDestino());
+                    break;
+                case 3: // Suponiendo que 3 es para el costo
+                    resultado.add(ruta.getCosto());
+                    break;
+                default:
+                    // Manejo de un número de columna inválido
+                    throw new IllegalArgumentException("Número de columna inválido");
+            }
+        }
+        return resultado; // Convertimos el Set en ArrayList para mantener el tipo de retorno
+    }
+
     public ArrayList<String> buscarDestino(String partidaBuscada) {
         ArrayList<String> destinosEncontrados = new ArrayList<>();
         // Recorremos todas las rutas en el LinkedHashMap
